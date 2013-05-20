@@ -24,4 +24,4 @@ BUILD_ID := CM10.1-$(shell date -u +%Y%m%d)
 
 # Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_marvel BUILD_ID=$(BUILD_ID) BUILD_DISPLAY_ID=$(BUILD_ID) BUILD_FINGERPRINT=cyanogenmod/htc_marvel/marvel:4.2.2/$(BUILD_ID)/v0.2:user/release-keys 
-PRODUCT_RELEASE_NAME := OWLPROJECT-Predator
+PRODUCT_RELEASE_NAME := OWLPROJECT-Predator-(Based-CRYPTOMILK)
