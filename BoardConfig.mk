@@ -25,7 +25,7 @@
 
 TARGET_BOOTLOADER_BOARD_NAME := marvel
 TARGET_DEVICE := marvel
-TARGET_CPU_ABI := armeabi
+TARGET_CPU_ABI := armeabi-v6l
 
 ### Compass
 BOARD_VENDOR_COMPASS_HARDWARE := akm8975
