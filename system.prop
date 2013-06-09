@@ -51,7 +51,7 @@ settings.display.brightness=100
 #ro.config.sync=yes
 #net.bt.name=Android
 
-ro.com.google.locationfeatures=1
+ro.com.google.locationfeatures=0
 ro.setupwizard.enable_bypass=1
 
 # Dalvik
