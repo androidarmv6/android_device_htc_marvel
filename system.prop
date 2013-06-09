@@ -32,7 +32,7 @@ mobiledata.interfaces=rmnet0,rmnet1,rmnet2,gprs,ppp0
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=150
 
-ro.sf.lcd_density=160
+ro.sf.lcd_density=150
 video.accelerate.hw=1
 debug.sf.no_hw_vsync=1
 debug.composition.type=gpu
