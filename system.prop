@@ -30,7 +30,7 @@ ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
 
 mobiledata.interfaces=rmnet0,rmnet1,rmnet2,gprs,ppp0
 wifi.interface=wlan0
-wifi.supplicant_scan_interval=150
+wifi.supplicant_scan_interval=180
 
 ro.sf.lcd_density=150
 video.accelerate.hw=1
@@ -39,11 +39,11 @@ debug.composition.type=gpu
 persist.sys.use_dithering=0
 persist.sys.purgeable_assets=1
 debug.sf.hw=1
-debug.gr.numframebuffers=3
+debug.gr.numframebuffers=2
 #com.qc.hdmi_out=false
 
 #settings.display.autobacklight=1
-#settings.display.brightness=143
+settings.display.brightness=100
 #persist.service.mount.playsnd=0
 #ro.setupwizard.mode=OPTIONAL
 #ro.media.dec.aud.wma.enabled=1
