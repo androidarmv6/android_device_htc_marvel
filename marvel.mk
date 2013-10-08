@@ -27,9 +27,31 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/ramdisk/init.marvel.bluez.rc:root/init.marvel.bluez.rc \
     $(LOCAL_PATH)/config/ramdisk/ueventd.marvel.rc:root/ueventd.marvel.rc
 
-## Replacement binaries (fix for akmd)
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_DIR)/config/bin/linker:system/bin/linker
+# Offmode charging images
+PRODUCT_COPY_FILES = \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/battery_error.png:recovery/root/res/offmode_charging_images/battery_error.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00031.png:recovery/root/res/offmode_charging_images/charging_full_00031.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00035.png:recovery/root/res/offmode_charging_images/charging_full_00035.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00041.png:recovery/root/res/offmode_charging_images/charging_full_00041.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00043.png:recovery/root/res/offmode_charging_images/charging_full_00043.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00047.png:recovery/root/res/offmode_charging_images/charging_full_00047.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00049.png:recovery/root/res/offmode_charging_images/charging_full_00049.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00053.png:recovery/root/res/offmode_charging_images/charging_full_00053.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00055.png:recovery/root/res/offmode_charging_images/charging_full_00055.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00059.png:recovery/root/res/offmode_charging_images/charging_full_00059.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00061.png:recovery/root/res/offmode_charging_images/charging_full_00061.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00065.png:recovery/root/res/offmode_charging_images/charging_full_00065.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00067.png:recovery/root/res/offmode_charging_images/charging_full_00067.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00071.png:recovery/root/res/offmode_charging_images/charging_full_00071.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00073.png:recovery/root/res/offmode_charging_images/charging_full_00073.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00077.png:recovery/root/res/offmode_charging_images/charging_full_00077.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00079.png:recovery/root/res/offmode_charging_images/charging_full_00079.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00083.png:recovery/root/res/offmode_charging_images/charging_full_00083.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00085.png:recovery/root/res/offmode_charging_images/charging_full_00085.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00089.png:recovery/root/res/offmode_charging_images/charging_full_00089.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00091.png:recovery/root/res/offmode_charging_images/charging_full_00091.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00095.png:recovery/root/res/offmode_charging_images/charging_full_00095.png \
+    $(LOCAL_PATH)/prebuilt/offmode_charging_images/charging_full_00099.png:recovery/root/res/offmode_charging_images/charging_full_00099.png
 
 # Copy configurations 
 ## Touchscreen Configuration
