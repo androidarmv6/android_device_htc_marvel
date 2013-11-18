@@ -30,7 +30,10 @@ TARGET_CPU_ABI := armeabi-v6l
 ### Compass
 BOARD_VENDOR_COMPASS_HARDWARE := akm8975
 
-### Kernel related stuff
+### Kernel
+TARGET_KERNEL_SOURCE := kernel/htc/msm7227
+TARGET_KERNEL_CONFIG := marvel_defconfig
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null
 BOARD_KERNEL_BASE := 0x12c00000
 BOARD_KERNEL_PAGESIZE := 2048
