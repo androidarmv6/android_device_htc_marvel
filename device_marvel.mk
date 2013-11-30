@@ -74,4 +74,5 @@ PRODUCT_PACKAGES += \
 ## Get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/marvel/marvel-vendor.mk)
 
-
+# Odexing
+DISABLE_DEXPREOPT := false
