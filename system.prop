@@ -30,7 +30,7 @@ mobiledata.interfaces=rmnet0,rmnet1,rmnet2,gprs,ppp0
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=180
 
-ro.sf.lcd_density=150
+ro.sf.lcd_density=160
 video.accelerate.hw=1
 debug.sf.no_hw_vsync=1
 debug.composition.type=gpu
@@ -38,6 +38,7 @@ persist.sys.use_dithering=0
 persist.sys.purgeable_assets=1
 debug.sf.hw=1
 debug.gr.numframebuffers=2
+persist.sys.prefer_16bpp=1
 #com.qc.hdmi_out=false
 
 #settings.display.autobacklight=1
