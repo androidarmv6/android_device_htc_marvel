@@ -1,8 +1,6 @@
-#
 # system.prop for marvel
-#
+
 # htc ril
-#
 ro.phone.min_match.HTC__016=7
 ro.ril.ecc.HTC-GCC=999,112,997
 ro.ril.ecc.HTC-WWE=999
@@ -74,8 +72,9 @@ ro.ril.avoid.pdp.overlap = 1
 # update the acoustic table for Buzz NEL lab testing
 ro.ril.update.acoustic.table = 1
 
-###################
 # USB
-###################
 persist.sys.usb.config=mass_storage,adb
 persist.service.adb.enable=1
+
+# Lockscreen
+ro.hwaccel.lockscreen=0
