@@ -132,6 +132,11 @@ on post-fs-data
     mkdir /data/misc/hotspot 0770 system hotspot
 
 
+on property:sys.boot_completed=1
+    # Override Kernel Samepage Merging (KSM) values
+    write /sys/kernel/mm/ksm/sleep_millisecs 4000
+    write /sys/kernel/mm/ksm/pages_to_scan 256
+
 ## Daemon processes to be run by init.
 
 service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
