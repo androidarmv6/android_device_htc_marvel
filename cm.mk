@@ -14,10 +14,11 @@ $(call inherit-product, vendor/cm/config/mini.mk)
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 480
 TARGET_SCREEN_WIDTH := 320
+TARGET_BOOTANIMATION_HALF_RES := true
 
 # Overrides for CM
 PRODUCT_NAME := cm_marvel
 PRODUCT_DEVICE := marvel
 
 ## Assign the build fingerprint to the build.prop file.
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=cyanogenmod/htc_marvel/marvel:4.3.1/$(BUILD_ID)/v0.1:user/test-keys
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=cyanogenmod/htc_marvel/marvel:4.4.2/$(BUILD_ID)/v0.1:user/test-keys
