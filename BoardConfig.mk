@@ -51,6 +51,7 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/htc/msm7x27-common/recovery/graphics.c
 BOARD_USES_MMCUTILS := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_NO_MISC_PARTITION := true
+DEVICE_RESOLUTION := 320x480
 
 # Odexing
 WITH_DEXPREOPT := true
