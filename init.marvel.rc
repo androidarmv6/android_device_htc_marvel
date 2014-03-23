@@ -1,4 +1,4 @@
-import init.qcom.rc
+import init.msm7x27.usb.rc
 
 on early-init
     #sdcard
