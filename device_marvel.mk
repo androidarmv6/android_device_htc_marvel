@@ -55,10 +55,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/marvel/init.marvel.rc:root/init.marvel.rc \
     device/htc/marvel/ueventd.marvel.rc:root/ueventd.marvel.rc
-    
-### PhilZ's extra.fstab
-PRODUCT_COPY_FILES += \
-    device/htc/marvel/extra.fstab:recovery/root/etc/extra.fstab
 
 # For emmc phone storage
 PRODUCT_PROPERTY_OVERRIDES += \
