@@ -37,7 +37,7 @@ PRODUCT_COPY_FILES += \
 
 ### Mount vold
 PRODUCT_COPY_FILES += \
-    device/htc/marvel/vold.fstab:system/etc/vold.fstab
+    device/htc/marvel/config/vold.fstab:system/etc/vold.fstab
 
 
 ### Keylayouts
@@ -53,8 +53,8 @@ PRODUCT_COPY_FILES += \
 
 ### Ramdisk
 PRODUCT_COPY_FILES += \
-    device/htc/marvel/init.marvel.rc:root/init.marvel.rc \
-    device/htc/marvel/ueventd.marvel.rc:root/ueventd.marvel.rc
+    device/htc/marvel/config/init.marvel.rc:root/init.marvel.rc \
+    device/htc/marvel/config/ueventd.marvel.rc:root/ueventd.marvel.rc
 
 # For emmc phone storage
 PRODUCT_PROPERTY_OVERRIDES += \
