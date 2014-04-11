@@ -1,9 +1,9 @@
 Device configuration for the HTC Wildfire S A510e (marvel).
 
-Copyright (C) 2011 The CyanogenMod Project
-Copyright (C) 2011 Andreas Schneider <asn@cryptomilk.org>
-Copyright (C) 2013 OWL Project
-Copyright (C) 2014 MarvelMod
+  - Copyright (C) 2011 The CyanogenMod Project
+  - Copyright (C) 2011 Andreas Schneider <asn@cryptomilk.org>
+  - Copyright (C) 2013 OWL Project
+  - Copyright (C) 2014 MarvelMod
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -35,17 +35,13 @@ Copyright (C) 2014 MarvelMod
 
   - Make a workspace
 
-  $ mkdir -p ~/cyanogenmod/system
-  $ cd ~/cyanogenmod/system
+  $ mkdir -p ~/cyanogenmod/system;cd ~/cyanogenmod/system
 
 
   - Do repo init & sync
 
   
-  $ repo init -u git://github.com/cm-10-2-marvel/android.git -b cm-10.2
-
-
-  $ repo sync
+  $ repo init -u git://github.com/cm-10-2-marvel/android.git -b cm-10.2;repo sync
 
 
   - Setup vendor
@@ -55,21 +51,19 @@ Copyright (C) 2014 MarvelMod
 
   - Setup environment
 
-  $ source build/envsetup.sh
-  $ lunch cm_marvel-eng
+  $ source build/envsetup.sh;lunch cm_marvel-eng
 
 
   - Build CM10.2
 
-  $ export USE_CCACHE=1
-  $ make -j4 bacon
+  $ export USE_CCACHE=1;make -j4 bacon
 
 
 * Thanks
 
-  Andreas Schneider
-  OWL Project
-  CyanogenMod
-  alquez
-  Droste
-  pabloPL
+  - Andreas Schneider
+  - OWL Project
+  - CyanogenMod
+  - alquez
+  - Droste
+  - pabloPL
