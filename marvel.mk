@@ -35,11 +35,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
-### Mount vold
-PRODUCT_COPY_FILES += \
-    device/htc/marvel/config/vold.fstab:system/etc/vold.fstab
-
-
 ### Keylayouts
 PRODUCT_COPY_FILES += \
     device/htc/marvel/key/marvel-keypad.kl:system/usr/keylayout/marvel-keypad.kl \
@@ -54,7 +49,8 @@ PRODUCT_COPY_FILES += \
 ### Ramdisk
 PRODUCT_COPY_FILES += \
     device/htc/marvel/config/init.marvel.rc:root/init.marvel.rc \
-    device/htc/marvel/config/ueventd.marvel.rc:root/ueventd.marvel.rc
+    device/htc/marvel/config/ueventd.marvel.rc:root/ueventd.marvel.rc \
+	device/htc/marvel/config/fstab.marvel:root/fstab.marvel
 
 # For emmc phone storage
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -75,4 +71,4 @@ PRODUCT_PACKAGES += \
 $(call inherit-product-if-exists, vendor/htc/marvel/marvel-vendor.mk)
 
 # Odexing
-DISABLE_DEXPREOPT := false
+#DISABLE_DEXPREOPT := false

@@ -62,7 +62,9 @@ on early-fs
     chown system system /sys/class/optical_sensors/proximity/ps_led
     chown system system /sys/class/optical_sensors/proximity/ps_test_mode
 
-
+on fs
+    mount_all /fstab.marvel
+	
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
