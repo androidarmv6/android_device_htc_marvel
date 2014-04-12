@@ -15,9 +15,14 @@ on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
     export SD_EXT_DIRECTORY /sd-ext
 
+on fs
 
+    mount_all /fstab.marvel
+    
 on early-fs
+
     # bluetooth power up/down interface
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/state
@@ -61,12 +66,6 @@ on early-fs
     chmod 0666 /sys/class/optical_sensors/proximity/ps_kadc
     chown system system /sys/class/optical_sensors/proximity/ps_led
     chown system system /sys/class/optical_sensors/proximity/ps_test_mode
-
-on fs
-    mount_all /fstab.marvel
-	
-on boot
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 
 on init
