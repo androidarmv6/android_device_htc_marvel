@@ -3,12 +3,38 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 #<src>                                      <mnt_point>        <type>  <mnt_flags and options>                 <fs_mgr_flags>
-cache                                       /cache             yaffs2  nosuid,nodev                            recoveryonly
-userdata                                    /data              yaffs2  nosuid,nodev                            recoveryonly
-system                                      /system            yaffs2  ro,barrier=1                            recoveryonly
-boot                                        /boot              mtd     defaults                                recoveryonly
-misc                                        /misc              mtd     defaults                                recoveryonly
-recovery                                    /recovery          mtd     defaults                                recoveryonly
-/dev/block/mmcblk0p2                        /sd-ext            ext4    defaults                                recoveryonly
+/dev/block/mtdblock4                         /cache             yaffs2  nosuid,nodev                            recoveryonly
+/dev/block/mtdblock5                         /data              yaffs2  nosuid,nodev                            recoveryonly
+/dev/block/mtdblock3                         /system            yaffs2  ro,barrier=1                            recoveryonly
+/dev/block/mtdblock2                         /boot              mtd     defaults                                recoveryonly
+/dev/block/mtdblock0                         /misc              mtd     defaults                                recoveryonly
+/dev/block/mtdblock1                         /recovery          mtd     defaults                                recoveryonly
+/dev/block/mmcblk0p2                         /sd-ext            ext4    defaults                                recoveryonly
 
-/devices/platform/msm_sdcc.1/mmc_host/mmc0  /storage/sdcard0  vfat    defaults                                voldmanaged=sdcard0:auto
+/devices/platform/msm_sdcc.1/mmc_host/mmc0  /storage/sdcard0  vfat    defaults                                voldmanaged=sdcard0:auto,noemulatedsd
+
+#### Old type of partition table ** as a reference
+# # cat /proc/mtd (marvel)
+#dev:    size   erasesize  name
+#mtd0: 000a0000 00020000 "misc"
+#mtd1: 00500000 00020000 "recovery"
+#mtd2: 00340000 00020000 "boot"
+#mtd3: 10d60000 00020000 "system"
+#mtd4: 02300000 00020000 "cache"
+#mtd5: 09600000 00020000 "userdata"
+#mtd6: 00a00000 00020000 "devlog"
+
+## cat proc/partitions
+#major     minor  #blocks name
+#  31        0        640 mtdblock0
+#  31        1       5120 mtdblock1
+#  31        2       3328 mtdblock2
+#  31        3     275840 mtdblock3
+#  31        4      35840 mtdblock4
+#  31        5     153600 mtdblock5
+#  31        6      10240 mtdblock6
+# 179        0   31166976 mmcblk0
+# 179        1   29565952 mmcblk0p1
+# 179        2    1074176 mmcblk0p2
+# 179        3     524288 mmcblk0p3
+
