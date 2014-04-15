@@ -38,3 +38,9 @@
 # 179        2    1074176 mmcblk0p2
 # 179        3     524288 mmcblk0p3
 
+## cat etc/fstab in CWM 6.0.2.8
+/dev/block/mtdblock4 /cache yaffs2 rw
+/dev/block/mtdblock5 /data yaffs2 rw
+/dev/block/mtdblock3 /system yaffs2 rw
+/dev/block/mmcblk0p1 /sdcard vfat rw
+/dev/block/mmcblk0p2 /sd-ext auto rw
