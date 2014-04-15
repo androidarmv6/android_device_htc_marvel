@@ -18,5 +18,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_marvel.mk
-#    $(LOCAL_DIR)/cm.mk
+    $(LOCAL_DIR)/cm.mk

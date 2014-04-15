@@ -1,4 +1,4 @@
-# Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,16 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+LOCAL_PATH:= $(call my-dir)
 
-# Inherit device specific files
-$(call inherit-product, device/htc/marvel/marvel.mk)
+include $(CLEAR_VARS)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_NAME := full_marvel
-PRODUCT_DEVICE := marvel
-PRODUCT_BRAND := htc_europe
-PRODUCT_MODEL := Wildfire S A510e
-PRODUCT_MANUFACTURER := HTC
-PRODUCT_CHARACTERISTICS := phone
+LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)
+
+LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
+
+LOCAL_MODULE_TAGS := optional
+
+LOCAL_SRC_FILES := lights.c
+LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_PRELINK_MODULE := false
+
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),chacha)
+   LOCAL_CFLAGS += -DKEYBOARD
+endif
+
+include $(BUILD_SHARED_LIBRARY)
