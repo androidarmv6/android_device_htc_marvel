@@ -15,51 +15,22 @@ Device configuration for the HTC Wildfire S A510e (marvel).
 
 * Description
 
-  This repository is for CyanogenMod 10.2 on the HTC Wildfire S (marvel).
-  It is still a work in progress.
+  This repository contains the device configuration required for
+  for building Android for the HTC Wildifre S (marvel). This
+  project is a work-in-progress.
+
+* Disclaimer
+
+  Todo. Basically, don't blame us if it eats your cat, thanks.
 
 
-* Boardinfo
+* Building
 
-  - Touchscreen
-    Cypress CY8C_TMA
-
-  - Sensors
-    Gsensor: BOSCH_BMA150
-    Compass: AKM8975
-    Battery: TPS65200
-    Light:   CM3602
+  Todo. Basically, normal CM build except use our manifest. Or
+  use a local manifest and point it here.
 
 
-* How To Build CM10.2 for HTC Marvel
-
-  - Make a workspace
-
-  $ mkdir -p ~/cyanogenmod/system;cd ~/cyanogenmod/system
-
-
-  - Do repo init & sync
-
-  
-  $ repo init -u git://github.com/cm-10-2-marvel/android.git -b cm-10.2;repo sync
-
-
-  - Setup vendor
-
-  $ ./vendor/cm/get-prebuilts
-
-
-  - Setup environment
-
-  $ source build/envsetup.sh;lunch cm_marvel-eng
-
-
-  - Build CM10.2
-
-  $ export USE_CCACHE=1;make -j4 bacon
-
-
-* Thanks
+* Credit
 
   - Andreas Schneider
   - OWL Project
@@ -67,3 +38,5 @@ Device configuration for the HTC Wildfire S A510e (marvel).
   - alquez
   - Droste
   - pabloPL
+  - The MarvelMod team
+  - Anybody else who wasn't mentioned.
