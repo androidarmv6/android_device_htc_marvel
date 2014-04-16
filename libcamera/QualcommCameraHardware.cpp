@@ -75,7 +75,7 @@ extern "C" {
 #define DEFAULT_PICTURE_WIDTH  1024
 #define DEFAULT_PICTURE_HEIGHT 768
 #define THUMBNAIL_BUFFER_SIZE (THUMBNAIL_WIDTH * THUMBNAIL_HEIGHT * 3/2)
-#define MAX_ZOOM_LEVEL 40
+#define MAX_ZOOM_LEVEL 20
 #define NOT_FOUND -1
 // Number of video buffers held by kernal (initially 1,2 &3)
 #define ACTIVE_VIDEO_BUFFERS 3
@@ -3099,11 +3099,7 @@ extern "C" sp<CameraHardwareInterface> openCameraHardware()
 static CameraInfo sCameraInfo[] = {
 	{
 		CAMERA_FACING_BACK,
-#ifdef CHACHA
-		 0,  /* orientation */
-#else
 		90,  /* orientation */
-#endif
 	}
 };
 
