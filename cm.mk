@@ -7,7 +7,7 @@
 # Copyright (C) 2011 The CyanogenMod Project
 # Copyright (C) 2014 Benjamin Gwynn <http://xenxier.tk>
 
-LOCAL_DIR := $(call my-dir)
+LOCAL_DIR := device/htc/marvel
 LOCAL_PATH := $(LOCAL_DIR)
 
 # Inherit makefile
