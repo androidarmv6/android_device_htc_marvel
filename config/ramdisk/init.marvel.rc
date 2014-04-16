@@ -1,4 +1,4 @@
-import init.msm7x27.usb.rc
+import init.marvel.usb.rc
 
 on early-init
     #sdcard

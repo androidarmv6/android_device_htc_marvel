@@ -45,27 +45,28 @@ PRODUCT_COPY_FILES += \
 # Copy low-level system files
 ## Ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/config/init.marvel.rc:root/init.marvel.rc \
-    $(LOCAL_DIR)/config/ueventd.marvel.rc:root/ueventd.marvel.rc \
-    $(LOCAL_DIR)/config/fstab.marvel:root/fstab.marvel \
-    $(LOCAL_DIR)/config/init.msm7x27.usb.rc:root/init.msm7x27.usb.rc
+    $(LOCAL_DIR)/config/ramdisk/fstab.marvel:root/fstab.marvel \
+    $(LOCAL_DIR)/config/ramdisk/init.marvel.rc:root/init.marvel.rc \
+    $(LOCAL_DIR)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.bluez.rc \
+    $(LOCAL_DIR)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.usb.rc \
+    $(LOCAL_DIR)/config/ramdisk/ueventd.marvel.rc:root/ueventd.marvel.rc
 
 ## Firmware Files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
-    $(LOCAL_DIR)/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
-    $(LOCAL_DIR)/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
+    $(LOCAL_DIR)/config/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
+    $(LOCAL_DIR)/config/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
+    $(LOCAL_DIR)/config/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
 
 ## Replacement binaries
 PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/bin/linker:system/bin/linker
+    $(LOCAL_DIR)/config/bin/linker:system/bin/linker
 
 # Copy configurations 
 ## Media profiles
 PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_DIR)/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_DIR)/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_DIR)/config/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_DIR)/config/media_profiles.xml:system/etc/media_profiles.xml
 
 ## Bluetooth Configuration
 PRODUCT_COPY_FILES += \
@@ -73,15 +74,15 @@ PRODUCT_COPY_FILES += \
 
 ## Touchscreen Configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
-    $(LOCAL_DIR)/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc
+    $(LOCAL_DIR)/config/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
+    $(LOCAL_DIR)/config/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc
 
 ## Keylayout configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/key/marvel-keypad.kl:system/usr/keylayout/marvel-keypad.kl \
-    $(LOCAL_DIR)/key/marvel-keypad.kcm.bin:system/usr/keychars/marvel-keypad.kcm.bin \
-    $(LOCAL_DIR)/key/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-    $(LOCAL_DIR)/key/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl
+    $(LOCAL_DIR)/config/key/marvel-keypad.kl:system/usr/keylayout/marvel-keypad.kl \
+    $(LOCAL_DIR)/config/key/marvel-keypad.kcm.bin:system/usr/keychars/marvel-keypad.kcm.bin \
+    $(LOCAL_DIR)/config/key/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    $(LOCAL_DIR)/config/key/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl
 
 # Install hardware packages
 ## Audio

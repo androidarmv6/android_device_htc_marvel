@@ -85,7 +85,7 @@ on property:sys.usb.config=mass_storage,rndis,adb
     start adbd
     setprop sys.usb.state $sys.usb.config
 
-    write /sys/class/android_usb/android0/iSerial CM10.1-Marvel
+    write /sys/class/android_usb/android0/iSerial Wildfire-S
     write /sys/class/android_usb/android0/f_rndis/manufacturer HTC
     write /sys/class/android_usb/android0/f_rndis/vendorID 19d2
     write /sys/class/android_usb/android0/f_rndis/wceis 1
