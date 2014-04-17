@@ -12,8 +12,6 @@
 $(call inherit-product, build/target/product/full_base_telephony.mk)	# Telephony configuration
 $(call inherit-product, build/target/product/languages_full.mk)		# Build with all languages
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)		# Build with GPS support
-$(call inherit-product, vendor/cm/config/common_mini_phone.mk)		# Mini configuration
-$(call inherit-product, vendor/cm/config/gsm.mk)			# GSM configuration
 
 ## Call vendors:
 $(call inherit-product, vendor/htc/marvel/marvel-vendor.mk)		# Include marvel vendor

@@ -10,6 +10,10 @@
 LOCAL_DIR := device/htc/marvel
 LOCAL_PATH := $(LOCAL_DIR)
 
+# Inherit common CM stuff
+$(call inherit-product, vendor/cm/config/common_mini_phone.mk)		# Mini configuration
+$(call inherit-product, vendor/cm/config/gsm.mk)			# GSM configuration
+
 # Inherit makefile
 ## Call our devices makefile.
 $(call inherit-product, $(LOCAL_DIR)/marvel.mk)
@@ -27,13 +31,13 @@ PRODUCT_BRAND := htc_europe
 PRODUCT_MODEL := Wildfire S A510e
 PRODUCT_MANUFACTURER := HTC
 PRODUCT_CHARACTERISTICS := phone
-PRODUCT_RELEASE_NAME := Wildfire S
+PRODUCT_RELEASE_NAME := WildfireS
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_marvel
 
 # Build Versioning
 ## Set the version of this build for use in 'About' and ZIP naming.
-BUILD_ID := marvelmod_$(shell date -u +%Y%m%d)
-PRODUCT_VERSION_DEVICE_SPECIFIC := -Build-$(shell date -u +%Y%m%d)
+#BUILD_ID := marvelmod_$(shell date -u +%Y%m%d)
+PRODUCT_VERSION_DEVICE_SPECIFIC := $(PRODUCT_RELEASE_NAME)
 
 ## Pass this versioning to our build.prop file.
 PRODUCT_BUILD_PROP_OVERRIDES += \
