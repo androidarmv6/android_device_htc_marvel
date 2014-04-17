@@ -16,13 +16,15 @@ on early-init
     export SD_EXT_DIRECTORY /sd-ext
 
 on fs
-
     mount_all /fstab.marvel
     
 on early-fs
-
+    #mount debugfs /sys/kernel/debug /sys/kernel/debug
+    
+    # kernel command line
+    chmod 0644 /proc/cmdline
+    
     # bluetooth power up/down interface
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/state
