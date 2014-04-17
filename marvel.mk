@@ -107,9 +107,9 @@ PRODUCT_PACKAGES += \
     libtilerenderer
 
 ## Camera
-PRODUCT_PACKAGES += \
-    camera.msm7x27 \
-    libcamera
+#PRODUCT_PACKAGES += \
+#    camera.msm7x27 \
+#    libcamera
 
 ## QCOM OMX
 PRODUCT_PACKAGES += \
