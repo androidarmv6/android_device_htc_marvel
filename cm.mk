@@ -36,9 +36,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_marvel
 
 # Build Versioning
 ## Set the version of this build for use in 'About' and ZIP naming.
-#BUILD_ID := marvelmod_$(shell date -u +%Y%m%d)
-PRODUCT_VERSION_DEVICE_SPECIFIC := $(PRODUCT_RELEASE_NAME)
 ROM_BUILDTYPE := KANG
+BUILD_ID := $(ROM_BUILDTYPE)_$(shell date -u +%Y%m%d)
+PRODUCT_VERSION_DEVICE_SPECIFIC := $(PRODUCT_RELEASE_NAME)
 TARGET_UNOFFICIAL_BUILD_ID := $(ROM_BUILDTYPE)
 
 ## Pass this versioning to our build.prop file.
