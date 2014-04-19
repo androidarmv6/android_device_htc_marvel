@@ -71,10 +71,10 @@ on early-fs
 
 on boot
     # Save kernel log
-    copy /proc/last_kmsg /data/last_kmsg
-    cp /proc/last_kmsg /data/last_kmsg_copied # If copy failed
-    chown root log /data/last_kmsg
-    chmod 0644 /data/last_kmsg
+    copy /proc/last_kmsg /data/dontpanic/last_kmsg
+    #cp /proc/last_kmsg /data/last_kmsg_copied # If copy failed
+    chown root log /data/dontpanic/last_kmsg
+    chmod 0644 /data/dontpanic/last_kmsg
     
 on init
     mount rootfs rootfs / remount
