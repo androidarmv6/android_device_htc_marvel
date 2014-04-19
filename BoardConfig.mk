@@ -100,14 +100,14 @@ COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
 
 ### Recovery
 
--include device/htc/marvel/recovery/BoardConfigCommon.mk
+-include device/htc/marvel/config/recovery/BoardConfigCommon.mk
 #BOARD_USES_RECOVERY_CHARGEMODE := true
-BOARD_CUSTOM_GRAPHICS := ../../../device/htc/marvel/recovery/graphics.c
+BOARD_CUSTOM_GRAPHICS := ../../../device/htc/marvel/config/recovery/graphics.c
 BOARD_USES_MMCUTILS := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_USES_MSM7X27_RECOVERY := true
-TARGET_RECOVERY_INITRC = device/htc/marvel/recovery/init.htc.rc
+TARGET_RECOVERY_INITRC = device/htc/marvel/config/recovery/init.htc.rc
 TARGET_RECOVERY_FSTAB := device/htc/marvel/config/ramdisk/fstab.marvel
 RECOVERY_FSTAB_VERSION := 2
 

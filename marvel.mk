@@ -7,11 +7,8 @@
 # Copyright (C) 2011 The CyanogenMod Project
 # Copyright (C) 2014 Benjamin Gwynn <http://xenxier.tk>
 
-# Inherit makefiles
-## Call common makefiles:
-$(call inherit-product, build/target/product/full_base_telephony.mk)	# Telephony configuration
-$(call inherit-product, build/target/product/languages_full.mk)		# Build with all languages
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)		# Build with GPS support
+LOCAL_DIR := device/htc/marvel
+LOCAL_PATH := $(LOCAL_DIR)
 
 ## Call vendors:
 $(call inherit-product, vendor/htc/marvel/marvel-vendor.mk)		# Include marvel vendor
@@ -48,7 +45,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.bluez.rc \
     $(LOCAL_DIR)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.usb.rc \
     $(LOCAL_DIR)/config/ramdisk/ueventd.marvel.rc:root/ueventd.marvel.rc
-
+	
 ## Firmware Files
 PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
