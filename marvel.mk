@@ -127,18 +127,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.phone_storage=0
 
+## Disable ADB authentication
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
+
 # Inherit qcom/msm7x27
 $(call inherit-product, device/qcom/msm7x27/msm7x27.mk)
-
-# Device overlays
-## Tell the compiler to use overlays found in the following folder:
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_DIR)/overlay
 
 # Additional properties
 ## Application artwork
 PRODUCT_LOCALES += mdpi
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
+$(call inherit-product, device/mdpi-common/mdpi.mk)
 
-## Disable ADB authentication
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
+# Device overlays
+## Tell the compiler to use overlays found in the following folder:
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_DIR)/overlay
