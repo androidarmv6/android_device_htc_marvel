@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Call our device's makefile.
 $(call inherit-product, device/htc/marvel/marvel.mk)
 
