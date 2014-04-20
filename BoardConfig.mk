@@ -17,23 +17,12 @@
 # Make sure this folder exists so display stuff doesn't fail
 $(shell mkdir -p $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/)
 
+-include device/qcom/msm7x27/BoardConfigCommon.mk
+
 TARGET_DEVICE := marvel
 TARGET_BOOTLOADER_BOARD_NAME := marvel
 TARGET_SPECIFIC_HEADER_PATH := device/htc/marvel/include
 
-### Board config
-TARGET_NO_BOOTLOADER := true
-TARGET_NO_RADIOIMAGE := true
-
-TARGET_ARCH := arm
-TARGET_CPU_ABI := armeabi-v6l
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := arm11
-TARGET_ARCH_VARIANT := armv6-vfp
-TARGET_ARCH_LOWMEM := true
-
-COMMON_GLOBAL_CFLAGS += -DTARGET_MSM7x27
-TARGET_BOARD_PLATFORM := msm7x27
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 TARGET_PROVIDES_LIBLIGHTS := true
@@ -69,11 +58,7 @@ BOARD_WLAN_DEVICE_REV            := bcm4329
 WIFI_BAND                        := 802_11_ABG
 
 ### Graphics
-# Option for choosing texture target on old adrenos
-BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
-BOARD_EGL_CFG := device/htc/marvel/config/egl.cfg
-TARGET_QCOM_DISPLAY_VARIANT := legacy
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := false
 TARGET_USES_SF_BYPASS := false
@@ -83,15 +68,12 @@ TARGET_USES_HWC_FENCE_SYNC := true
 TARGET_QCOM_HDMI_OUT := false
 TARGET_GRALLOC_USES_ASHMEM := false
 TARGET_USES_GENLOCK := true
-BOARD_EGL_NEEDS_LEGACY_FB := true
-# for modified libstagefright
-COMMON_GLOBAL_CFLAGS += -DQCOM_LEGACY_OMX
 
 # Disable HW VSYNC, kernel does not support it (yet)
 TARGET_NO_HW_VSYNC := true
 
-COMMON_GLOBAL_CFLAGS += -DQCOM_MISSING_PIXEL_FORMATS -DQCOM_NO_SECURE_PLAYBACK
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DQCOM_NO_SECURE_PLAYBACK -DQCOM_LEGACY_OMX -DQCOM_ICS_COMPAT
+COMMON_GLOBAL_CFLAGS += -DQCOM_MISSING_PIXEL_FORMATS
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 
 ### Camera
 BOARD_USE_NASTY_PTHREAD_CREATE_HACK := true
@@ -106,8 +88,6 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/htc/marvel/config/recovery/graphics.c
 BOARD_USES_MMCUTILS := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_NO_MISC_PARTITION := true
-BOARD_USES_MSM7X27_RECOVERY := true
-TARGET_RECOVERY_INITRC = device/htc/marvel/config/recovery/init.htc.rc
 TARGET_RECOVERY_FSTAB := device/htc/marvel/config/ramdisk/fstab.marvel
 RECOVERY_FSTAB_VERSION := 2
 
@@ -140,7 +120,7 @@ BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 
 BOARD_VENDOR_QCOM_AMSS_VERSION := 4735
 
-### Boot animation
+### Bootanimation
 TARGET_BOOTANIMATION_USE_RGB565 := true
 TARGET_SCREEN_HEIGHT := 480
 TARGET_SCREEN_WIDTH := 320
@@ -158,19 +138,9 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 20000
 BOARD_USES_LEGACY_RIL := true
 BOARD_USE_NEW_LIBRIL_HTC := true
 
-### Dalvik
-# If WITH_JIT is configured, build multiple versions of libdvm.so to facilitate
-# correctness/performance bugs triage
-WITH_JIT := true
-
-### Webkit
-TARGET_FORCE_CPU_UPLOAD := true
 
 ## Minimal fonts
 SMALLER_FONT_FOOTPRINT := true
 
 ### Browser
-JS_ENGINE := v8
-HTTP := chrome
-ENABLE_JSC_JIT := true
 ENABLE_WEBGL := true
