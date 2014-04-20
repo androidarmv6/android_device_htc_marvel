@@ -12,21 +12,10 @@ LOCAL_PATH := $(LOCAL_DIR)
 
 ## Call vendors:
 $(call inherit-product, vendor/htc/marvel/marvel-vendor.mk)		# Include marvel vendor
-$(call inherit-product, vendor/qcom/msm7x27/qcom-vendor.mk)		# Include QCOM vendor
-
-# Device overlays
-## Tell the compiler to use overlays found in the following folder:
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_DIR)/overlay
 
 # Permissions
 ## Copy the following permission files for our hardware.
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
@@ -52,7 +41,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
     $(LOCAL_DIR)/config/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
 
-## Replacement binaries
+## Replacement binaries (fix for akmd)
 PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/bin/linker:system/bin/linker
 
@@ -62,10 +51,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_DIR)/config/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_DIR)/config/media_profiles.xml:system/etc/media_profiles.xml
-
-## Bluetooth Configuration
-PRODUCT_COPY_FILES += \
-        system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
 
 ## Touchscreen Configuration
 PRODUCT_COPY_FILES += \
@@ -82,37 +67,19 @@ PRODUCT_COPY_FILES += \
 # Install hardware packages
 ## Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
     audio_policy.msm7x27 \
     audio.primary.msm7x27 \
-    libtinyalsa \
-    libaudioutils
+    libtinyalsa
 
 ## Sensors
 PRODUCT_PACKAGES += \
     sensors.msm7x27 \
     lights.msm7x27
 
-## Video Playback
-PRODUCT_PACKAGES += \
-    copybit.msm7x27 \
-    gralloc.msm7x27 \
-    libgenlock \
-    libmemalloc \
-    liboverlay \
-    libqdutils \
-    libtilerenderer
-
 ## Camera
 #PRODUCT_PACKAGES += \
 #    camera.msm7x27 \
 #    libcamera
-
-## QCOM OMX
-PRODUCT_PACKAGES += \
-    libstagefrighthw \
-    libmm-omxcore \
-    libOmxCore
 
 ## GPS
 PRODUCT_PACKAGES += \
@@ -147,31 +114,8 @@ PRODUCT_PACKAGES += \
     Email2 \
     Exchange2 \
 
-# Property overrides
-## Graphics
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=131072 \
-    ro.opengles.surface.rgb565=true \
-    com.qc.hardware=true \
-    debug.enabletr=false \
-    debug.hwui.render_dirty_regions=false \
-    debug.qctwa.statusbar=1 \
-    debug.qctwa.preservebuf=1 \
-    hwui.print_config=choice \
-    persist.sys.strictmode.visual=false
-
-## Stagefright
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.enable-player=true \
-    media.stagefright.enable-meta=false \
-    media.stagefright.enable-scan=false \
-    media.stagefright.enable-http=true \
-    media.stagefright.enable-aac=true \
-    media.stagefright.enable-qcp=true
-
 ## Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.camcorder.disablemeta=1 \
     ro.htc.camerahack=msm7k
 
 ## Media
@@ -182,6 +126,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ## Storage
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.phone_storage=0
+
+# Inherit qcom/msm7x27
+$(call inherit-product, device/qcom/msm7x27/msm7x27.mk)
+
+# Device overlays
+## Tell the compiler to use overlays found in the following folder:
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_DIR)/overlay
 
 # Additional properties
 ## Application artwork
