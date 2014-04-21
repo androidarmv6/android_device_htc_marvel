@@ -15,15 +15,7 @@ on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
     export SD_EXT_DIRECTORY /sd-ext
 
-on fs
-    mount_all /fstab.marvel
-    
 on early-fs
-    #mount debugfs /sys/kernel/debug /sys/kernel/debug
-    
-    # kernel command line
-    chmod 0644 /proc/cmdline
-    
     # bluetooth power up/down interface
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -68,14 +60,21 @@ on early-fs
     chmod 0666 /sys/class/optical_sensors/proximity/ps_kadc
     chown system system /sys/class/optical_sensors/proximity/ps_led
     chown system system /sys/class/optical_sensors/proximity/ps_test_mode
+    
+    # mount fs
+    mount_all /fstab.marvel
 
 on boot
+    #mount debugfs /sys/kernel/debug /sys/kernel/debug
+
+    # kernel command line
+    chmod 0644 /proc/cmdline 
+    
     # Save kernel log
-    copy /proc/last_kmsg /data/dontpanic/last_kmsg
-    #cp /proc/last_kmsg /data/last_kmsg_copied # If copy failed
-    chown root log /data/dontpanic/last_kmsg
-    chmod 0644 /data/dontpanic/last_kmsg
-    
+    copy /proc/last_kmsg /data/dontpanic/last_kmsg
+    chown root log /data/dontpanic/last_kmsg
+    chmod 0644 /data/dontpanic/last_kmsg
+    
 on init
     mount rootfs rootfs / remount
     mkdir /app-cache 01777 system system
