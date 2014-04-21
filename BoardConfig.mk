@@ -89,7 +89,6 @@ BOARD_USES_MMCUTILS := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_NO_MISC_PARTITION := true
 TARGET_RECOVERY_FSTAB := device/htc/marvel/config/ramdisk/fstab.marvel
-RECOVERY_FSTAB_VERSION := 2
 
 ### Audio
 BOARD_USES_GENERIC_AUDIO := false
