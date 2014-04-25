@@ -34,9 +34,13 @@ TARGET_KERNEL_SOURCE := kernel/htc/msm7227
 TARGET_KERNEL_CONFIG := marvel_defconfig
 
 ### Kernel related stuff
-BOARD_KERNEL_CMDLINE := androidboot.hardware=marvel no_console_suspend=1 console=null
+BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null androidboot.hardware=marvel 
 BOARD_KERNEL_BASE := 0x12c00000
 BOARD_KERNEL_PAGESIZE := 2048
+
+# Releasetools
+#TARGET_OTA_EXTRAS_FILE := device/htc/marvel/releasetools/extras.txt
+TARGET_OTA_ASSERT_DEVICE := marvel
 
 ### USB Mass Storage
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true

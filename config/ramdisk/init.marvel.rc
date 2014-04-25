@@ -61,24 +61,24 @@ on early-fs
     chown system system /sys/class/optical_sensors/proximity/ps_led
     chown system system /sys/class/optical_sensors/proximity/ps_test_mode
 
-on fs
-    mount yaffs2 mtd@system /system
-    mount yaffs2 mtd@system /system ro remount
-    mount yaffs2 mtd@userdata /data nosuid nodev
-    mount yaffs2 mtd@cache /cache nosuid nodev    
-    # mount fs
-    mount_all /fstab.marvel
-
 on boot
-    #mount debugfs /sys/kernel/debug /sys/kernel/debug
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
     # kernel command line
-    chmod 0644 /proc/cmdline 
+    chmod 666 /proc/cmdline 
     
     # Save kernel log
     copy /proc/last_kmsg /data/dontpanic/last_kmsg
     chown root log /data/dontpanic/last_kmsg
     chmod 0644 /data/dontpanic/last_kmsg
+
+on fs
+    mount yaffs2 mtd@system /system
+    mount yaffs2 mtd@system /system ro remount
+    mount yaffs2 mtd@userdata /data nosuid nodev
+    mount yaffs2 mtd@cache /cache nosuid nodev
+    # mount partitions
+    mount_all /fstab.marvel
     
 on init
     mount rootfs rootfs / remount

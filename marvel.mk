@@ -27,13 +27,13 @@ PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # Copy low-level system files
-## Ramdisk
+## Init
 PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/config/ramdisk/fstab.marvel:root/fstab.marvel \
-    $(LOCAL_DIR)/config/ramdisk/init.marvel.rc:root/init.marvel.rc \
-    $(LOCAL_DIR)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.bluez.rc \
-    $(LOCAL_DIR)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.usb.rc \
-    $(LOCAL_DIR)/config/ramdisk/ueventd.marvel.rc:root/ueventd.marvel.rc
+    $(LOCAL_PATH)/config/ramdisk/fstab.marvel:root/fstab.marvel \
+    $(LOCAL_PATH)/config/ramdisk/init.marvel.rc:root/init.marvel.rc \
+    $(LOCAL_PATH)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.bluez.rc \
+    $(LOCAL_PATH)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.usb.rc \
+    $(LOCAL_PATH)/config/ramdisk/ueventd.marvel.rc:root/ueventd.marvel.rc
 	
 ## Firmware Files
 PRODUCT_COPY_FILES += \

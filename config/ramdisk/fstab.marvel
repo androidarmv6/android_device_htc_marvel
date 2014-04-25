@@ -2,14 +2,10 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-#<src>                                      <mnt_point>        <type>  <mnt_flags and options>                 <fs_mgr_flags>
-boot                                        /boot              mtd     defaults                                defaults
-cache                                       /cache             yaffs2  nosuid,nodev                            check,wait
-misc                                        /misc              mtd     defaults                                check,wait
-recovery                                    /recovery          mtd     defaults                                defaults
-/dev/block/mmcblk0p2                        /sd-ext            ext4    defaults                                check,wait
-userdata                                    /data              yaffs2  nosuid,nodev                            check,wait
-system			                                /system            yaffs2  ro,remount	                             check,wait 
+#<src>                  <mnt_point>   <type>     <mnt_flags and options>                            <fs_mgr_flags>
+/dev/block/mtdblock3     /system      yaffs2     ro,barrier=1                                       wait
+/dev/block/mtdblock4     /cache       yaffs2     nosuid,nodev,barrier=1                             wait,check
+/dev/block/mtdblock5     /data        yaffs2     nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
 
 /devices/platform/msm_sdcc.2/mmc_host/mmc1  /storage/sdcard0   vfat    defaults                                voldmanaged=sdcard0:auto,noemulatedsd
 
@@ -22,3 +18,6 @@ system			                                /system            yaffs2  ro,remount	 
 #mtd4: 02300000 00020000 "cache"
 #mtd5: 09600000 00020000 "userdata"
 #mtd6: 00a00000 00020000 "devlog"
+
+## We don't need this for now 
+#/dev/block/mmcblk0p2                        /sd-ext            ext4    defaults                                check,wait
