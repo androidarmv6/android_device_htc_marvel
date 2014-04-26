@@ -6,7 +6,7 @@
 /dev/block/mtdblock3     /system      yaffs2     ro,barrier=1                                       wait
 /dev/block/mtdblock4     /cache       yaffs2     nosuid,nodev,barrier=1                             wait,check
 /dev/block/mtdblock5     /data        yaffs2     nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
-/dev/block/mtdblock2		 /boot	     	mtd	       defaults		                                        recoveryonly
+/dev/block/mtdblock2     /boot        mtd	       defaults		                                        recoveryonly
 
 /devices/platform/msm_sdcc.2/mmc_host/mmc1  /storage/sdcard0   vfat    defaults                                voldmanaged=sdcard0:auto,noemulatedsd
 
