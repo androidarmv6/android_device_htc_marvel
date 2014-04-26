@@ -2,23 +2,9 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-#<src>                  <mnt_point>   <type>     <mnt_flags and options>                            <fs_mgr_flags>
-/dev/block/mtdblock3     /system      yaffs2     ro,barrier=1                                       wait
-/dev/block/mtdblock4     /cache       yaffs2     nosuid,nodev,barrier=1                             wait,check
-/dev/block/mtdblock5     /data        yaffs2     nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
-/dev/block/mtdblock2     /boot        mtd        defaults                                           recoveryonly
+#<src>                  <mnt_point>  <type>   <mnt_flags and options>                            <fs_mgr_flags>
+/dev/block/mtdblock3     /system      ext4    ro,barrier=1                                       wait
+/dev/block/mtdblock4     /cache       ext4    nosuid,nodev,barrier=1                             wait,check
+/dev/block/mtdblock5     /data        ext4    nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
 
-/devices/platform/msm_sdcc.2/mmc_host/mmc1  /storage/sdcard0   vfat    defaults                                voldmanaged=sdcard0:auto,noemulatedsd
-
-## cat /proc/mtd
-#dev:    size   erasesize  name
-#mtd0: 000a0000 00020000 "misc"
-#mtd1: 00500000 00020000 "recovery"
-#mtd2: 00340000 00020000 "boot"
-#mtd3: 10d60000 00020000 "system"
-#mtd4: 02300000 00020000 "cache"
-#mtd5: 09600000 00020000 "userdata"
-#mtd6: 00a00000 00020000 "devlog"
-
-## We don't need this for now 
-#/dev/block/mmcblk0p2                        /sd-ext            ext4    defaults                                check,wait
+/devices/platform/msm_sdcc.1/mmc_host/mmc0 /storage/sdcard0 vfat defaults voldmanaged=sdcard:auto
