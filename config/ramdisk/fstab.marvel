@@ -9,3 +9,5 @@
 /dev/block/mtdblock5     /data        yaffs2    nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
 
 /devices/platform/msm_sdcc.2/mmc_host/mmc1 /storage/sdcard0 vfat defaults voldmanaged=sdcard:auto
+
+/dev/block/zram0          none        swap      defaults                                           zramsize=50331648
