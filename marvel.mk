@@ -42,8 +42,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
 
 ## Replacement binaries (fix for akmd)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/config/bin/linker:system/bin/linker
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_DIR)/config/bin/linker:system/bin/linker
 
 # Copy configurations 
 ## Media profiles
