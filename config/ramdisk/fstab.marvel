@@ -3,6 +3,7 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 #<src>                   <mnt_point>  <type>     <mnt_flags and options>                            <fs_mgr_flags>
+/dev/block/mtdblock2     /boot        mtd       defaults                                           recoveryonly
 /dev/block/mtdblock3     /system      yaffs2    ro,barrier=1                                       wait
 /dev/block/mtdblock4     /cache       yaffs2    nosuid,nodev,barrier=1                             wait,check
 /dev/block/mtdblock5     /data        yaffs2    nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
