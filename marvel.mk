@@ -24,7 +24,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/ramdisk/fstab.marvel:root/fstab.marvel \
     $(LOCAL_PATH)/config/ramdisk/init.marvel.rc:root/init.marvel.rc \
-    $(LOCAL_PATH)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.bluez.rc \
+    $(LOCAL_PATH)/config/ramdisk/init.marvel.bluez.rc:root/init.marvel.bluez.rc \
     $(LOCAL_PATH)/config/ramdisk/ueventd.marvel.rc:root/ueventd.marvel.rc
 
 ## Replacement binaries (fix for akmd)
