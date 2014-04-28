@@ -20,9 +20,6 @@
 TARGET_DEVICE := marvel
 TARGET_BOOTLOADER_BOARD_NAME := marvel
 
-TARGET_PROVIDES_LIBLIGHTS := true
-TARGET_PROVIDES_LIBAUDIO := true
-
 ### Kernel
 TARGET_KERNEL_CONFIG := marvel_defconfig
 
@@ -34,9 +31,6 @@ BOARD_KERNEL_PAGESIZE := 2048
 # Releasetools
 #TARGET_OTA_EXTRAS_FILE := device/htc/marvel/releasetools/extras.txt
 TARGET_OTA_ASSERT_DEVICE := marvel
-
-### USB Mass Storage
-BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
 ### Recovery
 TARGET_RECOVERY_FSTAB := device/htc/marvel/config/ramdisk/fstab.marvel

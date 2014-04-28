@@ -68,15 +68,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.htc.camerahack=msm7k
 
-## Media
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.a1026.nsForVoiceRec = 0 \
-    media.a1026.enableA1026 = 1
-
-## Storage
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.phone_storage=0
-
 # Device overlays
 ## Tell the compiler to use overlays found in the following folder:
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_DIR)/overlay
