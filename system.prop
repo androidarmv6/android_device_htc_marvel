@@ -14,36 +14,15 @@ ro.ril.enable.sdr=1
 ro.ril.enable.amr.wideband=0
 ro.ril.hep = 1
 
-rild.libpath=/system/lib/libhtc_ril.so
 ro.telephony.default_network=0
-ro.ril.enable.dtm=1
-ro.ril.hsdpa.category=8
-ro.ril.hsupa.category=5
-ro.ril.def.agps.mode=2
-ro.ril.hsxpa=2
-ro.ril.gprsclass=12
 ro.telephony.ril.v3=signalstrength,skipbrokendatacall
 # Modify MMS APN retry timer from 5s to 2s.
 ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
 
-mobiledata.interfaces=rmnet0,rmnet1,rmnet2,gprs,ppp0
-wifi.interface=wlan0
-wifi.supplicant_scan_interval=180
-
-ro.sf.lcd_density=160
 video.accelerate.hw=1
-debug.sf.no_hw_vsync=1
-debug.composition.type=gpu
-persist.sys.use_dithering=0
-persist.sys.purgeable_assets=1
-debug.sf.hw=1
-debug.gr.numframebuffers=2
-persist.sys.prefer_16bpp=1
-ro.bq.gpu_to_cpu_unsupported=1
 #com.qc.hdmi_out=false
 
 #settings.display.autobacklight=1
-settings.display.brightness=100
 #persist.service.mount.playsnd=0
 #ro.setupwizard.mode=OPTIONAL
 #ro.media.dec.aud.wma.enabled=1
@@ -51,15 +30,7 @@ settings.display.brightness=100
 #ro.config.sync=yes
 #net.bt.name=Android
 
-ro.com.google.locationfeatures=0
-ro.setupwizard.enable_bypass=1
-
-# Dalvik
-dalvik.vm.lockprof.threshold=500
-dalvik.vm.heapstartsize=5m
-dalvik.vm.heapgrowthlimit=24m
-dalvik.vm.heapsize=64m
-dalvik.vm.execution-mode=int:fast
+ro.sf.lcd_density=160
 
 # For HSDPA low throughput
 ro.ril.disable.power.collapse = 1
@@ -71,7 +42,6 @@ ro.ril.avoid.pdp.overlap = 1
 ro.ril.update.acoustic.table = 1
 
 # USB
-persist.sys.usb.config=mass_storage,adb
 persist.service.adb.enable=1
 
 # Lockscreen
