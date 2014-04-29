@@ -72,6 +72,7 @@ TARGET_USES_HWC_FENCE_SYNC := true
 TARGET_QCOM_HDMI_OUT := false
 TARGET_GRALLOC_USES_ASHMEM := false
 TARGET_USES_GENLOCK := true
+BOARD_USE_MHEAP_SCREENSHOT := true
 
 # Disable HW VSYNC, kernel does not support it (yet)
 TARGET_NO_HW_VSYNC := true
