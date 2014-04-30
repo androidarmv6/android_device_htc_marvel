@@ -89,7 +89,7 @@ COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
 
 -include device/htc/marvel/config/recovery/BoardConfigCommon.mk
 #BOARD_USES_RECOVERY_CHARGEMODE := true
-BOARD_CUSTOM_GRAPHICS := ../../../device/htc/marvel/config/recovery/graphics.c
+#BOARD_CUSTOM_GRAPHICS := ../../../device/htc/marvel/config/recovery/graphics.c
 BOARD_USES_MMCUTILS := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_NO_MISC_PARTITION := true
