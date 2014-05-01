@@ -21,7 +21,7 @@ TARGET_DEVICE := marvel
 TARGET_BOOTLOADER_BOARD_NAME := marvel
 
 ### Kernel
-TARGET_KERNEL_CONFIG := marvel_defconfig
+TARGET_KERNEL_CONFIG := cyanogen_msm7227_defconfig
 
 ### Kernel related stuff
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null androidboot.hardware=marvel 
