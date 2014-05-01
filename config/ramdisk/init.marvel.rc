@@ -1,6 +1,6 @@
 import init.msm7x27.usb.rc
 
-on early-init
+on init
     #sdcard
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
     mkdir /storage/sdcard0 0700 root root
@@ -71,16 +71,6 @@ on boot
     copy /proc/last_kmsg /data/dontpanic/last_kmsg
     chown root log /data/dontpanic/last_kmsg
     chmod 0644 /data/dontpanic/last_kmsg
-
-on fs
-    mount yaffs2 mtd@system /system
-    mount yaffs2 mtd@system /system ro remount
-    mount yaffs2 mtd@userdata /data nosuid nodev
-    mount yaffs2 mtd@cache /cache nosuid nodev
-    # mount partitions
-    mount_all /fstab.marvel
-    # zRAM
-    swapon_all /fstab.marvel
     
 on init
     mount rootfs rootfs / remount
@@ -115,6 +105,12 @@ on init
     write /sys/block/mtdblock3/bdi/read_ahead_kb 4
     write /sys/block/mtdblock4/bdi/read_ahead_kb 4
     write /sys/block/mtdblock5/bdi/read_ahead_kb 4
+
+on fs
+    # mount partitions
+    mount_all /fstab.marvel
+    # zRAM
+    swapon_all /fstab.marvel
 
 #on post-fs
 
@@ -217,9 +213,6 @@ service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
     group bluetooth net_bt_admin
     disabled
 
-on property:ro.fuse_sdcard=true
-   start sdcard
-   start fuse_sdcard0
    
 service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
     class late_start
