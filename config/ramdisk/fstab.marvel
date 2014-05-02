@@ -9,6 +9,6 @@ cache           /cache       yaffs2    nosuid,nodev,barrier=1                   
 userdata        /data        yaffs2    nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
 /dev/block/mmcblk0p2	/sd-ext		ext4	 defaults                                           recoveryonly
 
-/devices/platform/msm_sdcc.2/mmc_host/mmc1 auto vfat defaults voldmanaged=sdcard:auto,noemulatedsd
+/devices/platform/msm_sdcc.2/mmc_host/mmc1 auto vfat defaults voldmanaged=sdcard0:auto,noemulatedsd
 
 /dev/block/zram0          none        swap      defaults                                           zramsize=50331648
