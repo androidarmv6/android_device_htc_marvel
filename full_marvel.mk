@@ -21,6 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/htc/marvel/marvel.mk)
 
 # Install Google Apps if available
+MINI_GAPPS := true
 $(call inherit-product-if-exists, vendor/google/gapps_armv6_tiny.mk)
 
 PRODUCT_DEVICE := marvel
