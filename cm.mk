@@ -21,9 +21,6 @@ PRODUCT_DEVICE := marvel
 
 # Release name and versioning
 PRODUCT_RELEASE_NAME := WildfireS
-PRODUCT_VERSION_DEVICE_SPECIFIC :=
-BUILD_ID := KVT49L
-ROM_BUILDTYPE := HOMEMADE
 
 ## Assign the build fingerprint to the build.prop file.
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=cyanogenmod/htc_marvel/marvel:4.4.2/$(BUILD_ID)/v0.1:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=cyanogenmod/htc_marvel/marvel:4.4.2/$(BUILD_ID)/v1.5:user/release-keys
