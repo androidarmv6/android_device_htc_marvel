@@ -1,36 +1,28 @@
-Device configuration for the HTC Wildfire S A510e (marvel).
+HTC Wildfire S
+==============
 
-  - Copyright (C) 2011 The CyanogenMod Project
-  - Copyright (C) 2011 Andreas Schneider <asn@cryptomilk.org>
-  - Copyright (C) 2013 OWL Project
-  - Copyright (C) 2014 MarvelMod
+The HTC Wildfire S (codenamed _"marvel"_) is a phone from HTC.
 
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
+This branch is for building CyanogenMod 11 (or Android KitKat 4.4 AOSP based roms) ROMS.
 
-      http://www.apache.org/licenses/LICENSE-2.0
-
-------------------------------------------------------------------
-
-* Description
-
-  This repository contains the device configuration required for
-  for building Android for the HTC Wildifre S (marvel). This
-  project is a work-in-progress.
-
-* Disclaimer
-
-  Todo. Basically, don't blame us if it eats your cat, thanks.
+Basic   | Spec Sheet
+-------:|:-------------------------
+Chipset | Qualcomm MSM7227
+CPU     | ARM11 600 MHz 
+GPU     | Adreno 200
+Memory  | 512 MB RAM
+Shipped Android Version | 2.3.5
+Storage | 512 MB ROM
+Battery | Li-Ion 1230 mAh battery
+Display | 3.2" 320x480 px
+Camera | 5 MPx
 
 
-* Building
-
-  Todo. Basically, normal CM build except use our manifest. Or
-  use a local manifest and point it here.
+![HTC Wildfire S](http://static.thefullsignal.com/sites/knowyourcell/files/styles/article_main_wide_image/public/images/179707.jpg?itok=Ykx4LSMg "The beautiful HTC Wildfire S")
 
 
-* Credit
+
+* Credits
 
   - Andreas Schneider
   - OWL Project
@@ -38,5 +30,5 @@ Device configuration for the HTC Wildfire S A510e (marvel).
   - alquez
   - Droste
   - pabloPL
-  - The MarvelMod team
+  - Team Simplcit
   - Anybody else who wasn't mentioned.
