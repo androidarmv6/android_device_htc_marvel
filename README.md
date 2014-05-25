@@ -1,7 +1,7 @@
 HTC Wildfire S
 ==============
 
-The HTC Wildfire S (codenamed _"marvel"_) is a phone from HTC.
+The HTC Wildfire S (codenamed _"marvel"_) is a smartphone from HTC.
 
 This branch is for building CyanogenMod 11 (or Android KitKat 4.4 AOSP based roms) ROMS.
 
