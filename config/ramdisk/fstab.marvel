@@ -3,11 +3,12 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 #<src>          <mnt_point>  <type>    <mnt_flags and options>                            <fs_mgr_flags>
+recovery        /recovery    mtd       defaults                                           defaults
 boot            /boot        mtd       defaults                                           recoveryonly
 system          /system      yaffs2    ro,barrier=1                                       wait
 cache           /cache       yaffs2    nosuid,nodev,barrier=1                             wait,check
 userdata        /data        yaffs2    nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
-/dev/block/mmcblk0p2	/sd-ext		ext4	 defaults                                           recoveryonly
+/dev/block/mmcblk0p2	/sd-ext		ext4	 defaults                                 recoveryonly
 
 /devices/platform/msm_sdcc.2/mmc_host/mmc1 auto vfat defaults voldmanaged=sdcard0:auto,noemulatedsd
 
