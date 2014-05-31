@@ -72,5 +72,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ## Tell the compiler to use overlays found in the following folder:
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_DIR)/overlay
 
+## gps.conf
+$(call inherit-product, device/common/gps/gps_us_supl.mk)
+
 # inherit from msm7x27-common
 $(call inherit-product, device/htc/msm7x27-common/msm7x27.mk)
