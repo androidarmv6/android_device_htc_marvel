@@ -77,3 +77,6 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # inherit from msm7x27-common
 $(call inherit-product, device/htc/msm7x27-common/msm7x27.mk)
+
+# inherit caf vendor only when building caf
+$(call inherit-product-if-exists, vendor/msm7227/main.mk)
