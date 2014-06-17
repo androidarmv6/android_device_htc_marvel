@@ -103,11 +103,7 @@ on boot
 
     # kernel command line
     chmod 666 /proc/cmdline 
-    
-    # Save kernel log
-    copy /proc/last_kmsg /data/dontpanic/last_kmsg
-    chown root log /data/dontpanic/last_kmsg
-    chmod 0644 /data/dontpanic/last_kmsg
+
 
 on fs
     mount yaffs2 mtd@system /system
