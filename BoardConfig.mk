@@ -1,6 +1,4 @@
-## TODO
-
-# Copyright (C) 2011 The CyanogenMod Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,23 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from msm7x27-common
+# Inherit from msm7x27-common
 -include device/htc/msm7x27-common/BoardConfigCommon.mk
 
 TARGET_DEVICE := marvel
 TARGET_BOOTLOADER_BOARD_NAME := marvel
+TARGET_OTA_ASSERT_DEVICE := marvel
 
 ### Kernel
-TARGET_KERNEL_CONFIG := cyanogen_msm7227_defconfig
-
-### Kernel related stuff
+TARGET_KERNEL_CONFIG := htc_msm7227_defconfig
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null androidboot.hardware=marvel 
 BOARD_KERNEL_BASE := 0x12c00000
 BOARD_KERNEL_PAGESIZE := 2048
-
-# Releasetools
-#TARGET_OTA_EXTRAS_FILE := device/htc/marvel/releasetools/extras.txt
-TARGET_OTA_ASSERT_DEVICE := marvel
 
 ### Recovery
 TARGET_RECOVERY_FSTAB := device/htc/marvel/config/ramdisk/fstab.marvel
