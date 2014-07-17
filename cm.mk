@@ -10,7 +10,7 @@ TARGET_SCREEN_HEIGHT := 480
 TARGET_SCREEN_WIDTH := 320
 
 # Inherit common CM stuff
-$(call inherit-product, vendor/cm/config/mini.mk)
+$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 
 # Overrides for CM
 PRODUCT_NAME := cm_marvel
