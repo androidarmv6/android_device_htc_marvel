@@ -25,9 +25,6 @@ BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null androidboot.hardware=m
 BOARD_KERNEL_BASE := 0x12c00000
 BOARD_KERNEL_PAGESIZE := 2048
 
-### Recovery
-TARGET_RECOVERY_FSTAB := device/htc/marvel/config/ramdisk/fstab.marvel
-
 ### Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 3824192
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 11860608
