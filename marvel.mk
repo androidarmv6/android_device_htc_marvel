@@ -27,11 +27,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/ramdisk/init.marvel.bluez.rc:root/init.marvel.bluez.rc \
     $(LOCAL_PATH)/config/ramdisk/ueventd.marvel.rc:root/ueventd.marvel.rc
 
+## Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/ramdisk/fstab.marvel:recovery/root/etc/fstab.marvel \
+    $(LOCAL_PATH)/config/ramdisk/twrp.fstab:recovery/root/etc/twrp.fstab
+
 ## Replacement binaries (fix for akmd)
 #PRODUCT_COPY_FILES += \
 #    $(LOCAL_DIR)/config/bin/linker:system/bin/linker
 
-# Copy configurations 
+# Copy configurations
 ## Touchscreen Configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \

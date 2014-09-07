@@ -44,3 +44,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/marvel/bluetooth/inclu
 
 ### GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := marvel
+
+### Recovery
+DEVICE_RESOLUTION := 320x480
